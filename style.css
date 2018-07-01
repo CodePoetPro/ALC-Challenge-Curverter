@@ -1,0 +1,95 @@
+body{
+    background-image: linear-gradient(to right bottom, #009bcc, #0080a8, #006686, #004d65, #003546);
+    height: 100vh;
+    font-family: "Roboto";
+    overflow: hidden;
+    width : 100%;
+    box-sizing: border-box;        
+}
+header{
+    display: flex;
+    justify-content: center;   
+    margin-bottom: 20px; 
+}
+main{
+    display: flex;
+    width: 100%;   
+    justify-content: center; 
+    box-sizing: border-box;    
+}
+.Currverter-box{
+    margin-top : 20px;
+    max-width: 500px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.37);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    min-height: 150px;
+    border-radius: 10px;
+    color: #fff;
+    padding: 0px 10px;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.box{
+    padding: 20px;
+    display: grid;
+    box-sizing: border-box;    
+}
+
+.box select{
+    color: #fff;
+    font-weight: 800;  
+    color: #fff;
+    font-size: 18px;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;        
+}
+
+.box input{
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: solid 2px#fff;
+    display: block;
+    width: 100%;
+    font-size: 36px;
+    font-weight: 100;
+    color: #fff;
+    box-sizing: border-box;        
+}
+
+.button{
+    margin: 20px;
+    width: 70px;
+    display: flex;
+    align-content: space-around;
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+
+section{
+    display: flex;
+    width: 100%;   
+    justify-content: center; 
+}
+
+.rate-section{
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    color: #fff;
+}
+
+.head-text {
+    font-weight: 100;
+    font-size: 24px;
+}

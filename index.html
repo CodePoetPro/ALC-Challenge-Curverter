@@ -6,9 +6,45 @@
     <title>Currverter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <img src="assets/logo.png">
+    </header>
+    <main id="currverter">
+        <div class="Currverter-box">
+            <div class="box">
+                <select onchange="getRate();" name="from" id="from">
+                    <option value="NGN" selected>
+                       NGN
+                    </option>
+                </select>
+                <input   onkeyup="calculateExchange();" type="number" id="from_value">
+            </div>
+            <div class="box">
+                <select onchange="getRate();" name="to" id="to">
+                    <option selected value="USD">
+                        USD
+                    </option>
+                </select>
+                <input disabled type="number" id="to_value">
+            </div>
+            <div class="option">
+                <div onclick="swap();" class="button">
+                    <img height="14px" src="assets/refresh.png"> SWAP
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="lib/idb.js"></script> 
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js').then(function() { 
+            console.log("Service Worker Registered"); 
+          });
+        }
+    </script>  
 </body>
 </html>
