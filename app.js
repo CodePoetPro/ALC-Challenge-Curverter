@@ -17,13 +17,15 @@ function getCurrency(){
             let opt1 = document.createElement('option');
             opt.value = currency
             opt1.value = currency;
-            opt.innerHTML =  currency
+            opt.innerHTML =  currency;
             opt1.innerHTML = currency;
             fromSelect.appendChild(opt);
             toSelect.appendChild(opt1);
             db_index++;  
             saveCurrencies(db_index, currency);          
         }
+    }).catch(()=>{
+        getCurrencyFromDB();
     })
 }
 
@@ -47,7 +49,7 @@ function getRate(){
             saveRate(fromCurrency,toCurrency,forwardRate,backwardRate);
         }
     ).catch(()=>{
-
+        getRateFromDB(fromCurrency,toCurrency);
     })
 }
 
@@ -61,7 +63,31 @@ function saveRate(from, to, forward_rate, backward_rate){
 }
 
 function getRateFromDB(from, to){
- 
+    let forwardQuery = `${from}_${to}`;
+    let backwardQuery = `${to}_${from}`;
+    getRate(forwardQuery).then((res)=>{
+        forwardRate = res;
+        rate = res;
+    });
+    getRate(backwardQuery).then((res)=>{
+        backwardRate = res;
+    });
+}
+
+function getCurrencyFromDB(){
+    getCurrencies().then((currencies) =>{
+        for (let currency of currencies){
+            let opt  = document.createElement('option');
+            let opt1 = document.createElement('option');
+            opt.value = currency;
+            opt1.value = currency;
+            opt.innerHTML =  currency;
+            opt1.innerHTML = currency;
+            fromSelect.appendChild(opt);
+            toSelect.appendChild(opt1);
+        }
+         
+    });
 }
 
 function calculateExchange(){

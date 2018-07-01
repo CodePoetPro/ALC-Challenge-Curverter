@@ -68,9 +68,9 @@ export const getCurrencies = () => {
 }
 
 export const setRate = (key, val) => {
-    return idbKey.set('convertion', key, val);
+    return idbKey.set('rates', key, val);
 }
 
 export const getRate = (key) => {
-    return idbKey.get('convertion', key);
+    return idbKey.get('rate', key);
 }
